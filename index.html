@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Task Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
+
+        body{
+            background-repeat: no-repeat;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrEO9kcUYvHLNuSBfYz6TY5htFo8Uacxrx2-UGwWkeIkWivhjd4Qu5X0lRiprCfzvkCGs&usqp=CAU');
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            color: white;
+        }
+        h1{
+            text-align: center;
+            padding: 20px;
+        }
+        div{
+            padding: 10px;
+            margin: 15px;
+            display: flex;
+            justify-content: center;
+        }
+        input{
+            text-align: center;
+            margin: 5px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #000;
+        }
+        ul, li, button{
+            text-align: center;
+            padding: 5px;
+        }
+        button{
+            margin: 5px;
+            padding: 15px;
+            position: relative;
+            width: 100px;
+            height: 50px;
+            overflow: hidden;
+            border: 1px solid #000;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            transition: 0.5s;
+            letter-spacing: 1px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: bold;
+            background-color: #000;
+            background-image: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+            background-size: 3000% 100%;
+            color: #fff;
+            cursor: pointer;
+            -webkit-animation: ani2 0.7s steps(29) forwards;
+            animation: ani2 0.7s steps(29) forwards;
+        }
+
+        button:hover {
+            -webkit-animation: ani 0.7s steps(29) forwards;
+            animation: ani 0.7s steps(29) forwards;
+        }
+
+        @-webkit-keyframes ani2 {
+            0% {background-position: 0 0;}
+            100% {background-position: -2900% 0;}
+        }
+
+        @keyframes ani2 {
+            0% {background-position: 0 0;}
+            100% {background-position: -2900% 0;}
+        }
+
+        @-webkit-keyframes ani {
+            0% {background-position: -2900% 0;}
+            100% {background-position: 0 0;}
+        }
+
+        @keyframes ani {
+            0% {background-position: -2900% 0;}
+            100% {background-position: 0 0;}
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        DAILY TASK PLANNER
+    </h1>
+    <div>
+        <input id="box" size="50" placeholder="Mention Your tasks">
+        <button onclick="add()">ADD</button>
+    </div>
+    <ul id="ul">
+        <li>
+            Add Your Tasks <button onclick="remove(event)">REMOVE</button>
+        </li>
+    </ul>
+    <script>
+        var box = document.getElementById("box");
+        var ul = document.getElementById("ul");
+
+        function add() {
+            var listitem = document.createElement("li");
+            listitem.innerHTML = box.value + " <button onclick='remove(event)'>REMOVE</button>";
+            ul.append(listitem);
+        }
+
+        function remove(event) {
+            event.target.parentElement.remove();
+        }
+    </script>
+</body>
+</html>
